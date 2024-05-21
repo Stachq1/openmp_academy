@@ -7,6 +7,7 @@
 
 constexpr double pi() { return std::atan(1) * 4; }
 
+// Computes the initial condition of the heat equation
 void setInitialCondition(double* u0, unsigned int N, double dx) {
   auto f = [](double x) {return 6 * std::sin(pi() * x);};
   for(unsigned int i = 0; i < N; ++i) {
@@ -14,6 +15,7 @@ void setInitialCondition(double* u0, unsigned int N, double dx) {
   }
 }
 
+// Performs a single step of the final difference method
 void step(double* u_new, double* u_old, unsigned int meshSize, double dx, double dt, double alpha) {
   double dx_sq_inv = 1 / (dx * dx);
   for(unsigned int i = 1; i < meshSize - 1; ++i) {
@@ -21,6 +23,7 @@ void step(double* u_new, double* u_old, unsigned int meshSize, double dx, double
   }
 }
 
+// Computes the difference between maximum and minimum of vector u
 void minMaxDiff(double* u, unsigned int meshSize) {
   double val_max = std::numeric_limits<double>::min();
   double val_min = std::numeric_limits<double>::max();
