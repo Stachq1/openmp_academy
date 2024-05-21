@@ -34,7 +34,6 @@ void minMaxDiff(double* u, unsigned int meshSize) {
 // Stability condition check
 void checkStability(double alpha, double dx, double dt) {
     double r = alpha * dt / (dx * dx);
-    std::cout << "r: " << r << std::endl;
     assert(r < 0.5 && "This scheme is only stable if r < 0.5.");
 }
 
