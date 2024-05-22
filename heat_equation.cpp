@@ -41,10 +41,10 @@ void checkStability(double alpha, double dx, double dt) {
 }
 
 int main() {
-  const unsigned int meshSize = 100;
+  const unsigned int meshSize = 20000;
   const unsigned int numSteps = 10000;
 
-  const double dx = 1.0 / (meshSize - 1);
+  const double dx = 100.0 / (meshSize - 1);
   const double dt = 0.0001;
   const double alpha = 0.1;
 
